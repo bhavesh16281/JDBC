@@ -9,5 +9,5 @@ public class Customer extends Shop {
 	public void loginAsCustomer() {
 		System.out.println("Method to login as Customer");
 	}
-
+	
 }

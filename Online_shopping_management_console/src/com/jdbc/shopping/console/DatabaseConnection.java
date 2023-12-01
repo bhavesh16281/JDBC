@@ -3,7 +3,7 @@ package com.jdbc.shopping.console;
 import java.sql.*;
 
 public class DatabaseConnection {
-	private final String url = "jdbc:mysql://localhost:3306/sakila";
+	private final String url = "jdbc:mysql://localhost:3306/online_shopping_database";
 	private final String userName = "root";
 	private final String password = "root";
 	

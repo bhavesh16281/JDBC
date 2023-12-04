@@ -9,13 +9,20 @@ CREATE TABLE admin (
   firstName varchar(20) DEFAULT NULL,
   lastName varchar(20) DEFAULT NULL,
   emailId varchar(30) DEFAULT NULL,
-  insertTime datetime DEFAULT NULL,
   mobileNo double DEFAULT NULL,
   userName varchar(50) DEFAULT NULL,
   password varchar(10) DEFAULT NULL,
   PRIMARY KEY (adminId)
 );
-INSERT INTO admin (adminId, firstName, lastName, emailId, insertTime, mobileNo) VALUES
-	(1001, 'MUTHYALU', 'BHAVESH','bhavesh16281@gmail.com','2016-01-28 00:00:00', 8309828565,);
---	(1002, 'James', 'Sr.Analyst', '2016-01-28 00:00:00', 0),
---	(1003, 'Rocky', 'Sr.Analyst', '2016-01-28 00:00:00', 100000);
+
+DROP TABLE IF EXISTS customer;
+CREATE TABLE customer (
+  custId int(11) unsigned NOT NULL AUTO_INCREMENT,
+  firstName varchar(20) DEFAULT NULL,
+  lastName varchar(20) DEFAULT NULL,
+  emailId varchar(30) DEFAULT NULL,
+  mobileNo double DEFAULT NULL,
+  userName varchar(50) DEFAULT NULL,
+  password varchar(10) DEFAULT NULL,
+  PRIMARY KEY (custId)
+);

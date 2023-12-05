@@ -67,7 +67,32 @@ public class Admin extends Shop {
 	}
 	
 	public void loginAsAdmin() {
+		
+		String userName,password;
 		System.out.println("Method to login as Admin");
+		System.out.print("Enter User name: ");
+		userName = sc.next();
+		System.out.println("Enter Password: ");
+		password = sc.next();
+		
+		String query = "select userName from admin";
+		
+		try {
+			con = DatabaseConnection.dbConnection();
+			stmt = con.createStatement();
+			ResultSet rs = stmt.executeQuery(query);
+			System.out.println(rs.next());
+			
+			if(rs.next()) {
+				System.out.println("Login succesfull..");
+			}
+			else {
+				System.out.println("Username does not exist...");
+			}
+		}
+		catch(Exception e){
+			System.out.println();
+		}
 	}
 	
 	public void addProduct() {

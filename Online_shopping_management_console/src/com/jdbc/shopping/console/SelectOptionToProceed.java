@@ -50,6 +50,7 @@ public class SelectOptionToProceed {
 		}
 		catch(Exception e){
 			System.out.println("Error in SelectOptionToProceed.java");
+			e.printStackTrace();
 		}
 		
 	}

@@ -15,6 +15,7 @@ public class DatabaseConnection {
 		}
 		catch(SQLException e){
 			System.out.println("DATABASE IS NOT CONNECTED...");
+			e.printStackTrace();
 		}
 		return con;
 	}

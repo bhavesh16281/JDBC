@@ -11,6 +11,8 @@ public class Shop {
 		
 		SelectOptionToProceed sotp = new SelectOptionToProceed();
 		sotp.options();
+		
+		
 
 	}
 

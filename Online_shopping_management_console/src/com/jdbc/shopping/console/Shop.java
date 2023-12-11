@@ -10,7 +10,7 @@ public class Shop {
 		System.out.println("\n************************************************");
 		
 		SelectOptionToProceed sotp = new SelectOptionToProceed();
-		sotp.options();
+		sotp.mainMenuOptions();
 		
 		
 

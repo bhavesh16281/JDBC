@@ -7,6 +7,7 @@ public class Admin extends Shop {
 	private static Connection con;
 	private static Statement stmt;
 	Scanner sc = new Scanner(System.in);
+	SelectOptionToProceed sotp = new SelectOptionToProceed();
 	
 	
 	public void registerAsAdmin() throws SQLException {		
@@ -72,7 +73,7 @@ public class Admin extends Shop {
 		homePage = sc.nextInt();
 		if(homePage == 0) {
 			SelectOptionToProceed sotp = new SelectOptionToProceed();
-			sotp.options();
+			sotp.mainMenuOptions();
 		}
 		else {
 			System.out.println("Enter valid choice.");
@@ -82,7 +83,6 @@ public class Admin extends Shop {
 	public void loginAsAdmin() {
 		
 		String userName,password;
-		System.out.println("Method to login as Admin");
 		System.out.print("Enter User name: ");
 		userName = sc.next();
 		userName = userName.toLowerCase();
@@ -103,17 +103,10 @@ public class Admin extends Shop {
 				System.out.println("Username does not exist, please register as admin...");
 			}
 			else {
+				System.out.println("\n************************************************");
 				System.out.println("Succesfully logged in as admin.");
-			}
-			
-			System.out.print("Enter 0 to go to Homepage: ");
-			int homePage = sc.nextInt();
-			if(homePage == 0) {
-				SelectOptionToProceed sotp = new SelectOptionToProceed();
-				sotp.options();
-			}
-			else {
-				System.out.println("Enter valid choice.");
+				sotp.adminMenuOptions();
+
 			}
 		}
 		catch(Exception e){
@@ -123,35 +116,148 @@ public class Admin extends Shop {
 	}
 	
 	public void addProduct() {
+		System.out.println("In the method add products..");
+		
+		System.out.print("Enter 0 to go to previous menu or 1 for Main menu : ");
+		int homePage = sc.nextInt();
+		if(homePage == 1) {
+			SelectOptionToProceed sotp = new SelectOptionToProceed();
+			sotp.mainMenuOptions();
+		}
+		else if(homePage == 0) {
+			SelectOptionToProceed sotp = new SelectOptionToProceed();
+			sotp.adminMenuOptions();
+		}
+		else {
+			System.out.println("Enter either 0 or 1 ");
+		}
 		
 	}
 	
 	public void deleteProduct() {
+		System.out.println("In the method delete products..");
 		
+		System.out.print("Enter 0 to go to previous menu or 1 for Main menu : ");
+		int homePage = sc.nextInt();
+		if(homePage == 1) {
+			SelectOptionToProceed sotp = new SelectOptionToProceed();
+			sotp.mainMenuOptions();
+		}
+		else if(homePage == 0) {
+			SelectOptionToProceed sotp = new SelectOptionToProceed();
+			sotp.adminMenuOptions();
+		}
+		else {
+			System.out.println("Enter either 0 or 1 ");
+		}
 	}
 	
 	public void viewProducts() {
+		System.out.println("In the method view products..");
 		
+		System.out.print("Enter 0 to go to previous menu or 1 for Main menu : ");
+		int homePage = sc.nextInt();
+		if(homePage == 1) {
+			SelectOptionToProceed sotp = new SelectOptionToProceed();
+			sotp.mainMenuOptions();
+		}
+		else if(homePage == 0) {
+			SelectOptionToProceed sotp = new SelectOptionToProceed();
+			sotp.adminMenuOptions();
+		}
+		else {
+			System.out.println("Enter either 0 or 1 ");
+		}
 	}
 	
 	public void searchProducts() {
+		System.out.println("In the method search products..");
 		
+		System.out.print("Enter 0 to go to previous menu or 1 for Main menu : ");
+		int homePage = sc.nextInt();
+		if(homePage == 1) {
+			SelectOptionToProceed sotp = new SelectOptionToProceed();
+			sotp.mainMenuOptions();
+		}
+		else if(homePage == 0) {
+			SelectOptionToProceed sotp = new SelectOptionToProceed();
+			sotp.adminMenuOptions();
+		}
+		else {
+			System.out.println("Enter either 0 or 1 ");
+		}
 	}
 	
 	public void removingCustomers() {
+		System.out.println("In the method removing customers..");
 		
+		System.out.print("Enter 0 to go to previous menu or 1 for Main menu : ");
+		int homePage = sc.nextInt();
+		if(homePage == 1) {
+			SelectOptionToProceed sotp = new SelectOptionToProceed();
+			sotp.mainMenuOptions();
+		}
+		else if(homePage == 0) {
+			SelectOptionToProceed sotp = new SelectOptionToProceed();
+			sotp.adminMenuOptions();
+		}
+		else {
+			System.out.println("Enter either 0 or 1 ");
+		}
 	}
 	
 	public void editingCustomers() {
+		System.out.println("In the method edit customers..");
 		
+		System.out.print("Enter 0 to go to previous menu or 1 for Main menu : ");
+		int homePage = sc.nextInt();
+		if(homePage == 1) {
+			SelectOptionToProceed sotp = new SelectOptionToProceed();
+			sotp.mainMenuOptions();
+		}
+		else if(homePage == 0) {
+			SelectOptionToProceed sotp = new SelectOptionToProceed();
+			sotp.adminMenuOptions();
+		}
+		else {
+			System.out.println("Enter either 0 or 1 ");
+		}
 	}
 	
 	public void viewCustomers() {
+		System.out.println("In the method view customers..");
 		
+		System.out.print("Enter 0 to go to previous menu or 1 for Main menu : ");
+		int homePage = sc.nextInt();
+		if(homePage == 1) {
+			SelectOptionToProceed sotp = new SelectOptionToProceed();
+			sotp.mainMenuOptions();
+		}
+		else if(homePage == 0) {
+			SelectOptionToProceed sotp = new SelectOptionToProceed();
+			sotp.adminMenuOptions();
+		}
+		else {
+			System.out.println("Enter either 0 or 1 ");
+		}
 	}
 	
 	public void editAdminProfile() {
+		System.out.println("In the method edit admin profile..");
 		
+		System.out.print("Enter 0 to go to previous menu or 1 for Main menu : ");
+		int homePage = sc.nextInt();
+		if(homePage == 1) {
+			SelectOptionToProceed sotp = new SelectOptionToProceed();
+			sotp.mainMenuOptions();
+		}
+		else if(homePage == 0) {
+			SelectOptionToProceed sotp = new SelectOptionToProceed();
+			sotp.adminMenuOptions();
+		}
+		else {
+			System.out.println("Enter either 0 or 1 ");
+		}
 	}
 
 }

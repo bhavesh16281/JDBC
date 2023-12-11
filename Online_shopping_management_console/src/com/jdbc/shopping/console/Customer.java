@@ -33,7 +33,7 @@ public class Customer extends Shop {
 		userName = custFName +"."+custLName;
 		userName = userName.toLowerCase();
 		
-		System.out.println("Create a password: ");
+		System.out.print("Create a password: ");
 		custPassword = sc.next();
 		
 		String userCheck = "select * from customer where binary userName = '"+userName+"'";
@@ -70,11 +70,11 @@ public class Customer extends Shop {
 			con.close();
 		}
 		
-		System.out.print("Enter 6 to go to Homepage: ");
+		System.out.print("Enter 0 to go to Homepage: ");
 		homePage = sc.nextInt();
-		if(homePage == 6) {
+		if(homePage == 0) {
 			SelectOptionToProceed sotp = new SelectOptionToProceed();
-			sotp.options();
+			sotp.mainMenuOptions();
 		}
 		else {
 			System.out.println("Enter valid choice.");
@@ -82,10 +82,7 @@ public class Customer extends Shop {
 	}
 	
 	public void loginAsCustomer() {
-		System.out.println("Method to login as Customer");
-		
 		String userName,password;
-		System.out.println("Method to login as Customer");
 		System.out.print("Enter User name: ");
 		userName = sc.next();
 		System.out.print("Enter Password: ");
@@ -112,7 +109,7 @@ public class Customer extends Shop {
 			int homePage = sc.nextInt();
 			if(homePage == 0) {
 				SelectOptionToProceed sotp = new SelectOptionToProceed();
-				sotp.options();
+				sotp.mainMenuOptions();
 			}
 			else {
 				System.out.println("Enter valid choice.");

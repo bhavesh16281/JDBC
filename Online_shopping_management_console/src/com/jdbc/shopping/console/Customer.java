@@ -10,6 +10,7 @@ public class Customer extends Shop {
 	private static Connection con;
 	private static Statement stmt;
 	Scanner sc = new Scanner(System.in);
+	SelectOptionToProceed sotp = new SelectOptionToProceed();
 	
 	public void regesterAsCustomer() throws SQLException {
 		int custId = 0,homePage;
@@ -100,19 +101,20 @@ public class Customer extends Shop {
 		
 			if(count == 0) {
 				System.out.println("Username does not exist, please register as customer...");
+				System.out.print("Enter 0 to go to Homepage: ");
+				int homePage = sc.nextInt();
+				if(homePage == 0) {
+					SelectOptionToProceed sotp = new SelectOptionToProceed();
+					sotp.mainMenuOptions();
+				}
+				else {
+					System.out.println("Enter valid choice.");
+				}
 			}
 			else {
+				System.out.println("\n************************************************");
 				System.out.println("Succesfully logged in as customer.");
-			}
-			
-			System.out.print("Enter 0 to go to Homepage: ");
-			int homePage = sc.nextInt();
-			if(homePage == 0) {
-				SelectOptionToProceed sotp = new SelectOptionToProceed();
-				sotp.mainMenuOptions();
-			}
-			else {
-				System.out.println("Enter valid choice.");
+				sotp.customerMenuOptions();
 			}
 		}
 		catch(Exception e){
@@ -123,29 +125,128 @@ public class Customer extends Shop {
 	
 	public void viewProducts() {
 		
+		System.out.println("In the method view products..");
+		
+		System.out.print("Enter 0 to go to previous menu or 1 for Main menu : ");
+		int homePage = sc.nextInt();
+		if(homePage == 1) {
+			SelectOptionToProceed sotp = new SelectOptionToProceed();
+			sotp.mainMenuOptions();
+		}
+		else if(homePage == 0) {
+			SelectOptionToProceed sotp = new SelectOptionToProceed();
+			sotp.customerMenuOptions();
+		}
+		else {
+			System.out.print("Enter either 0 or 1 : ");
+		}
+		
 	}
 	
 	public void searchProduct() {
 		
+		System.out.println("In the method search products..");
+		System.out.print("Enter 0 to go to previous menu or 1 for Main menu : ");
+		int homePage = sc.nextInt();
+		if(homePage == 1) {
+			SelectOptionToProceed sotp = new SelectOptionToProceed();
+			sotp.mainMenuOptions();
+		}
+		else if(homePage == 0) {
+			SelectOptionToProceed sotp = new SelectOptionToProceed();
+			sotp.customerMenuOptions();
+		}
+		else {
+			System.out.println("Enter either 0 or 1");
+		}
 	}
 	
 	public void addProductToCart() {
 		
+		System.out.println("In the method add products to cart..");
+		System.out.print("Enter 0 to go to previous menu or 1 for Main menu : ");
+		int homePage = sc.nextInt();
+		if(homePage == 1) {
+			SelectOptionToProceed sotp = new SelectOptionToProceed();
+			sotp.mainMenuOptions();
+		}
+		else if(homePage == 0) {
+			SelectOptionToProceed sotp = new SelectOptionToProceed();
+			sotp.customerMenuOptions();
+		}
+		else {
+			System.out.println("Enter either 0 or 1");
+		}
 	}
 	
 	public void removeProductFromCart() {
 		
+		System.out.println("In the method remove products from cart..");
+		System.out.print("Enter 0 to go to previous menu or 1 for Main menu : ");
+		int homePage = sc.nextInt();
+		if(homePage == 1) {
+			SelectOptionToProceed sotp = new SelectOptionToProceed();
+			sotp.mainMenuOptions();
+		}
+		else if(homePage == 0) {
+			SelectOptionToProceed sotp = new SelectOptionToProceed();
+			sotp.customerMenuOptions();
+		}
+		else {
+			System.out.println("Enter either 0 or 1");
+		}
 	}
 	
 	public void viewCart() {
 		
+		System.out.println("In the method view cart..");
+		System.out.print("Enter 0 to go to previous menu or 1 for Main menu : ");
+		int homePage = sc.nextInt();
+		if(homePage == 1) {
+			SelectOptionToProceed sotp = new SelectOptionToProceed();
+			sotp.mainMenuOptions();
+		}
+		else if(homePage == 0) {
+			SelectOptionToProceed sotp = new SelectOptionToProceed();
+			sotp.customerMenuOptions();
+		}
+		else {
+			System.out.println("Enter either 0 or 1");
+		}
 	}
 	
 	public void proceedToPayment() {
-		
+		System.out.println("In the method proceed to payment..");
+		System.out.print("Enter 0 to go to previous menu or 1 for Main menu : ");
+		int homePage = sc.nextInt();
+		if(homePage == 1) {
+			SelectOptionToProceed sotp = new SelectOptionToProceed();
+			sotp.mainMenuOptions();
+		}
+		else if(homePage == 0) {
+			SelectOptionToProceed sotp = new SelectOptionToProceed();
+			sotp.customerMenuOptions();
+		}
+		else {
+			System.out.println("Enter either 0 or 1");
+		}
 	}
 	
 	public void editProfile() {
 		
+		System.out.println("In the method edit profile..");
+		System.out.print("Enter 0 to go to previous menu or 1 for Main menu : ");
+		int homePage = sc.nextInt();
+		if(homePage == 1) {
+			SelectOptionToProceed sotp = new SelectOptionToProceed();
+			sotp.mainMenuOptions();
+		}
+		else if(homePage == 0) {
+			SelectOptionToProceed sotp = new SelectOptionToProceed();
+			sotp.customerMenuOptions();
+		}
+		else {
+			System.out.println("Enter either 0 or 1");
+		}
 	}
 }

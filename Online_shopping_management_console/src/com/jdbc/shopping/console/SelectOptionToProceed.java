@@ -3,14 +3,13 @@ package com.jdbc.shopping.console;
 import java.util.Scanner;
 
 public class SelectOptionToProceed {
-	
-	
+
 	public void mainMenuOptions() {
 		Admin admin = new Admin();
 		Customer customer = new Customer();
-		
-		try(Scanner sc = new Scanner(System.in)) {
-			
+
+		try (Scanner sc = new Scanner(System.in)) {
+
 			System.out.println("Select an option to proceed...");
 			System.out.println("1 - Register as ADMIN");
 			System.out.println("2 - Register as CUSTOMER");
@@ -19,48 +18,40 @@ public class SelectOptionToProceed {
 			System.out.println("*******************************************");
 			System.out.print("Enter Choice: ");
 			int option = sc.nextInt();
-			if(option == 1) {
-				
+			if (option == 1) {
+
 				admin.registerAsAdmin();
-			}
-			else if(option ==2) {
-				
+			} else if (option == 2) {
+
 				customer.regesterAsCustomer();
-			}
-			else if(option ==3) {
-				
-				
+			} else if (option == 3) {
+
 				System.out.print("ENTER 'A' FOR ADMIN OR 'C' FOR CUSTOMER: ");
 				String loginAs = sc.next();
-				if(loginAs.equalsIgnoreCase("A")) {
+				if (loginAs.equalsIgnoreCase("A")) {
 					admin.loginAsAdmin();
-				}
-				else if(loginAs.equalsIgnoreCase("C")) {
+				} else if (loginAs.equalsIgnoreCase("C")) {
 					customer.loginAsCustomer();
-				}
-				else {
+				} else {
 					System.out.println("Enter Valid Input");
 				}
-			}
-			else if(option ==4) {
+			} else if (option == 4) {
 				System.out.println("Bye Fraaandssss...");
-			}
-			else {
+			} else {
 				System.out.println("SELECT A VALID OPTION..");
 			}
-			
-		}
-		catch(Exception e){
+
+		} catch (Exception e) {
 			System.out.println("Error in mainMenuOptions method...");
 			e.printStackTrace();
 		}
-		
+
 	}
-	
+
 	public void adminMenuOptions() {
 		Admin admin = new Admin();
-		try(Scanner sc = new Scanner(System.in)){
-			
+		try (Scanner sc = new Scanner(System.in)) {
+
 			System.out.println("Select an option to proceed...");
 			System.out.println("1 - Add Product");
 			System.out.println("2 - Delete Product");
@@ -74,61 +65,108 @@ public class SelectOptionToProceed {
 			System.out.println("*******************************************");
 			System.out.print("Enter Choice: ");
 			int option = sc.nextInt();
-			
-			if(option == 1) {
+
+			if (option == 1) {
 				admin.addProduct();
-			}
-			else if(option == 2) {
+			} else if (option == 2) {
 				admin.deleteProduct();
-			}
-			else if(option == 3) {
+			} else if (option == 3) {
 				admin.viewProducts();
-			}
-			else if(option == 4) {
+			} else if (option == 4) {
 				admin.searchProducts();
-			}
-			else if(option == 5) {
+			} else if (option == 5) {
 				admin.removingCustomers();
-			}
-			else if(option == 6) {
+			} else if (option == 6) {
 				admin.editingCustomers();
-			}
-			else if(option == 7) {
+			} else if (option == 7) {
 				admin.viewCustomers();
-			}
-			else if(option == 8) {
+			} else if (option == 8) {
 				admin.editAdminProfile();
-			}
-			else if(option == 9) {
+			} else if (option == 9) {
 				System.out.println("Logout succesfull...");
-				
+
 				SelectOptionToProceed sotp = new SelectOptionToProceed();
 				sotp.mainMenuOptions();
-			}
-			else {
+			} else {
 				System.out.println("SELECT A VALID OPTION..");
 				System.out.print("Enter 0 to go to previous menu or 1 for Main menu : ");
 				int homePage = sc.nextInt();
-				if(homePage == 1) {
+				if (homePage == 1) {
 					SelectOptionToProceed sotp = new SelectOptionToProceed();
 					sotp.mainMenuOptions();
-				}
-				else if(homePage == 0) {
+				} else if (homePage == 0) {
 					SelectOptionToProceed sotp = new SelectOptionToProceed();
 					sotp.adminMenuOptions();
-				}
-				else {
+				} else {
 					System.out.println("Enter either 0 or 1 ");
 				}
 			}
-			
-		}
-		catch(Exception e){
+
+		} catch (Exception e) {
 			System.out.println("Error in adminMenuOptions method");
 			e.printStackTrace();
 		}
+
+	}
+
+	public void customerMenuOptions() {
 		
-		
+		Customer cust = new Customer();
+		try (Scanner sc = new Scanner(System.in)) {
+
+			System.out.println("Select an option to proceed...");
+			System.out.println("1 - View Products");
+			System.out.println("2 - Search Products");
+			System.out.println("3 - Add product cart");
+			System.out.println("4 - Remove product from cart");
+			System.out.println("5 - View cart");
+			System.out.println("6 - Proceed to payment");
+			System.out.println("7 - Edit your Profile");
+			System.out.println("8 - Logout..");
+			System.out.println("*******************************************");
+			System.out.print("Enter Choice: ");
+			int option = sc.nextInt();
+
+			if (option == 1) {
+				cust.viewProducts();
+			} else if (option == 2) {
+				cust.searchProduct();
+			} else if (option == 3) {
+				cust.addProductToCart();
+			} else if (option == 4) {
+				cust.removeProductFromCart();
+			} else if (option == 5) {
+				cust.viewCart();
+			} else if (option == 6) {
+				cust.proceedToPayment();
+			} else if (option == 7) {
+				cust.editProfile();
+			}
+			else if (option == 8) {
+				System.out.println("Logout succesfull...");
+
+				SelectOptionToProceed sotp = new SelectOptionToProceed();
+				sotp.mainMenuOptions();
+			} else {
+				System.out.println("SELECT A VALID OPTION..");
+				System.out.print("Enter 0 to go to previous menu or 1 for Main menu : ");
+				int homePage = sc.nextInt();
+				if (homePage == 1) {
+					SelectOptionToProceed sotp = new SelectOptionToProceed();
+					sotp.mainMenuOptions();
+				} else if (homePage == 0) {
+					SelectOptionToProceed sotp = new SelectOptionToProceed();
+					sotp.customerMenuOptions();
+				} else {
+					System.out.println("Enter either 0 or 1 ");
+				}
+			}
+
+		} catch (Exception e) {
+			System.out.println("Error in customerMenuOptions method");
+			e.printStackTrace();
+		}
+
 	}
 
 }

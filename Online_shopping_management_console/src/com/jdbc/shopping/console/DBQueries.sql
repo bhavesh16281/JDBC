@@ -26,3 +26,16 @@ CREATE TABLE customer (
   password varchar(10) DEFAULT NULL,
   PRIMARY KEY (custId)
 );
+
+DROP TABLE IF EXISTS products;
+CREATE TABLE products (
+	productId int(4) unsigned NOT NULL UNIQUE,
+	brand varchar(20) DEFAULT NULL,
+	model varchar(20) DEFAULT NULL,
+	processor  varchar(20) DEFAULT NULL,
+	androidVersion varchar(20) DEFAULT NULL,
+	ram int(2) DEFAULT NULL,
+	rom int(4) DEFAULT NULL,
+	price double DEFAULT NULL,
+	PRIMARY KEY (productId)
+);

@@ -101,6 +101,15 @@ public class Admin extends Shop {
 		
 			if(count == 0) {
 				System.out.println("Username does not exist, please register as admin...");
+				System.out.print("Enter 0 to go to Homepage: ");
+				int homePage = sc.nextInt();
+				if(homePage == 0) {
+					SelectOptionToProceed sotp = new SelectOptionToProceed();
+					sotp.mainMenuOptions();
+				}
+				else {
+					System.out.println("Enter valid choice.");
+				}
 			}
 			else {
 				System.out.println("\n************************************************");
@@ -115,8 +124,11 @@ public class Admin extends Shop {
 		}
 	}
 	
-	public void addProduct() {
+	public void addProduct() throws SQLException {
 		System.out.println("In the method add products..");
+		
+		Products products = new Products();
+		products.createProduct();
 		
 		System.out.print("Enter 0 to go to previous menu or 1 for Main menu : ");
 		int homePage = sc.nextInt();

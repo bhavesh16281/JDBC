@@ -125,7 +125,6 @@ public class Admin extends Shop {
 	}
 	
 	public void addProduct() throws SQLException {
-		System.out.println("In the method add products..");
 		
 		Products products = new Products();
 		products.createProduct();
@@ -148,19 +147,58 @@ public class Admin extends Shop {
 	
 	public void deleteProduct() {
 		System.out.println("In the method delete products..");
+		System.out.print("Enter product Id to delete : ");
+		int productId = sc.nextInt();
 		
-		System.out.print("Enter 0 to go to previous menu or 1 for Main menu : ");
-		int homePage = sc.nextInt();
-		if(homePage == 1) {
-			SelectOptionToProceed sotp = new SelectOptionToProceed();
-			sotp.mainMenuOptions();
-		}
-		else if(homePage == 0) {
-			SelectOptionToProceed sotp = new SelectOptionToProceed();
-			sotp.adminMenuOptions();
-		}
-		else {
-			System.out.println("Enter either 0 or 1 ");
+		try {
+			con = DatabaseConnection.dbConnection();
+			stmt = con.createStatement();
+			
+			String checkProduct = "select * from products where productId = '"+productId+"'";
+			ResultSet rs = stmt.executeQuery(checkProduct);
+			int count = 0;
+			while(rs.next()) {
+				count +=1;
+			}
+			
+			if(count == 0) {
+				System.out.println("No product exists with the product Id.");
+				System.out.print("Enter 0 to go to previous menu or 1 for Main menu : ");
+				int homePage = sc.nextInt();
+				if(homePage == 1) {
+					SelectOptionToProceed sotp = new SelectOptionToProceed();
+					sotp.mainMenuOptions();
+				}
+				else if(homePage == 0) {
+					SelectOptionToProceed sotp = new SelectOptionToProceed();
+					sotp.adminMenuOptions();
+				}
+				else {
+					System.out.println("Enter either 0 or 1 ");
+				}
+			}
+			else {
+				String deleteQuery = "delete from products where productId = '"+productId+"'";
+				stmt.executeUpdate(deleteQuery);
+				System.out.println("Product succesfully deleted..");
+				System.out.print("Enter 0 to go to previous menu or 1 for Main menu : ");
+				int homePage = sc.nextInt();
+				if(homePage == 1) {
+					SelectOptionToProceed sotp = new SelectOptionToProceed();
+					sotp.mainMenuOptions();
+				}
+				else if(homePage == 0) {
+					SelectOptionToProceed sotp = new SelectOptionToProceed();
+					sotp.adminMenuOptions();
+				}
+				else {
+					System.out.println("Enter either 0 or 1 ");
+				}
+				
+			}
+		} catch (SQLException e) {
+			System.out.println("Error in deleteProduct method...");
+			e.printStackTrace();
 		}
 	}
 	

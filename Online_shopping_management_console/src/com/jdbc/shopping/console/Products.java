@@ -82,22 +82,36 @@ public class Products {
 	
 	public void createProduct() throws SQLException {
 		System.out.println("In the methos create products");
+		
 		System.out.print("Enter product Id : ");
-		setProductId(sc.nextInt());
+		int a = sc.nextInt();
 		System.out.print("Enter brand name : ");
-		setBrand(sc.next());
+		String b = sc.next();
 		System.out.print("Enter model name : ");
-		setModel(sc.next());
+		String c = sc.next();
+		c += sc.nextLine(); 
 		System.out.print("Enter processor : ");
-		setProcessor(sc.next());
+		String d = sc.next();
+		d += sc.nextLine(); 
 		System.out.print("Enter android version : ");
-		setAndroidVersion(sc.next());
+		String ee = sc.next();
+		ee += sc.nextLine(); 
 		System.out.print("Enter Ram : ");
-		setRam(sc.nextInt());
+		int f = sc.nextInt();
 		System.out.print("Enter Storage : ");
-		setRom(sc.nextInt());
+		int g = sc.nextInt();
 		System.out.print("Enter price : ");
-		setPrice(sc.nextDouble());
+		double h = sc.nextDouble();
+		
+		
+		setProductId(a);
+		setBrand(b);
+		setModel(c);
+		setProcessor(d);
+		setAndroidVersion(ee);
+		setRam(f);
+		setRom(g);
+		setPrice(h);
 		
 		String productCheck = "select * from products where productId = '"+getProductId()+"'";
 		con = DatabaseConnection.dbConnection();
